@@ -1,57 +1,89 @@
-# 🎓 CLO–PLO Mapping System
+# 🎓 OBE Quiz Checker
 
-A Streamlit-based academic assessment application for managing Course Learning Outcomes (CLOs) and Program Learning Outcomes (PLOs).
+### Collective Assessment Alignment Overview and Graphical Analysis
 
-## Features
+OBE Quiz Checker is a Streamlit-based assessment analysis tool designed to evaluate assessment questions for alignment with **Course Learning Outcomes (CLOs), Program Learning Outcomes (PLOs), subject relevance, and Bloom's Taxonomy**.
 
-- Program management
-- PLO management
-- Course management
-- CLO management
-- Bloom's Taxonomy classification
-- CLO–PLO mapping matrix
-- Mapping scale from 0 to 3
-- Automatic PLO coverage calculation
-- PLO status analysis
-- Dashboard
-- Interactive charts
-- Excel export
-- PDF export
-- Excel data upload
-- Data reset functionality
+The tool supports different types of assessment questions and is not limited to MCQs. It can process questions from uploaded PDF, DOCX, TXT, CSV, and Excel files.
 
-## Mapping Scale
+---
 
-| Value | Meaning |
-|---|---|
-| 0 | No Mapping |
-| 1 | Low |
-| 2 | Medium |
-| 3 | High |
+## 📌 Purpose
 
-## PLO Coverage
+The purpose of OBE Quiz Checker is to help instructors and academic coordinators quickly review an assessment and identify whether its questions are appropriately aligned with:
 
-The application calculates PLO coverage based on the average mapping strength.
+- Course/Subject
+- CLOs
+- PLOs
+- Bloom's Taxonomy
+- Overall OBE assessment requirements
 
-| Coverage | Status |
-|---|---|
-| 70–100% | Satisfactory |
-| 50–69% | Needs Improvement |
-| Below 50% | Weak |
+Instead of evaluating only individual question quality, the application provides a **collective overview of the assessment** through scores, tables, metrics, and graphical representations.
 
-## Technology
+---
 
-- Python
-- Streamlit
-- Pandas
-- Plotly
-- OpenPyXL
-- XlsxWriter
-- ReportLab
+# ✨ Key Features
 
-## Installation
+## 1. 📂 Multiple File Formats
 
-Clone the repository:
+The application can read assessment files in:
 
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+- PDF
+- DOCX
+- TXT
+- CSV
+- XLSX
+- XLS
+
+For PDF files, the application first attempts normal text extraction and can use OCR as a fallback when the PDF contains scanned pages.
+
+---
+
+## 2. 📝 Diverse Assessment Questions
+
+The tool does not assume that every assessment is an MCQ quiz.
+
+It can process:
+
+- MCQs
+- Short-answer questions
+- Conceptual questions
+- Numerical/problem-solving questions
+- Analytical questions
+- Essay questions
+- Application-based questions
+- Evaluation questions
+- Design/creation questions
+
+---
+
+## 3. 🎯 Subject Relevance
+
+The application checks whether questions are relevant to the selected course or subject.
+
+For example:
+
+**Selected Subject:**
+
+> General Chemistry
+
+The assessment questions are examined for evidence that they belong to the selected subject.
+
+### Important Rule
+
+Subject relevance acts as a **mandatory alignment condition**.
+
+A question should not receive a high overall alignment score simply because its CLO, PLO, or Bloom characteristics appear suitable if the question itself is not relevant to the selected subject.
+
+---
+
+# 4. 🎯 CLO Alignment
+
+Users can enter their Course Learning Outcomes (CLOs), for example:
+
+```text
+CLO1: Explain fundamental chemistry concepts.
+
+CLO2: Apply chemical principles to solve problems.
+
+CLO3: Analyze chemical reactions and experimental results.
